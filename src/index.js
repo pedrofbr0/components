@@ -39,6 +39,11 @@ import ApprovalCard from "./ApprovalCard";
 // They are passed as an argument to the child component as an object. The
 // child component can then access the data by using the props object.
 
+// To passa a component to another, we still use the props system, but we
+// use the JSX syntax and now encapsulate the component in a JSX tag. This
+// pass the component to the parent component so it can render it.
+// We acess the component with props.children
+
 // Fixing the live reloading  
 if (module.hot) {
     module.hot.accept();
@@ -48,25 +53,34 @@ if (module.hot) {
 const App = () => {
     return (
         <div className="ui container comments">
-            <ApprovalCard/>
+
+            <ApprovalCard>
                 <CommentDetail 
                     author="Sam" 
                     date="Today at 6:00PM" 
                     commentary="Shut up!" 
                     avatar={faker.image.avatar()} 
                 />
+            </ApprovalCard>
+
+            <ApprovalCard>
                 <CommentDetail 
                     author="Alex" 
                     date="Today at 5:42PM" 
                     commentary="Nice one!" 
                     avatar={faker.image.avatar()} 
                 />
+            </ApprovalCard>
+
+            <ApprovalCard>
                 <CommentDetail 
                     author="Jane" 
                     date="Today at 3:33PM" 
                     commentary="Nice blog post!" 
                     avatar={faker.image.avatar()} 
                 />
+            </ApprovalCard>
+
         </div>
     );
 };
