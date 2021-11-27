@@ -31,46 +31,25 @@ import CommentDetail from "./CommentDetail";
 // whenever we show a component inside of another, we don't use curly braces,
 // we use the JSX tags
 
+// Props are used to pass data from a parent component to a child component
+// We can't pass data from a child component to a parent component (the other
+// way around) because the parent component is not aware of the child component
+// and therefore it can't pass data to it.
+// They are passed as an argument to the child component as an object. The
+// child component can then access the data by using the props object.
+
+// Fixing the live reloading  
+if (module.hot) {
+    module.hot.accept();
+}
+
+
 const App = () => {
     return (
         <div className="ui container comments">
-            <CommentDetail />    
-            <div className="comment">
-
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={faker.image.avatar()} />
-                </a>
-
-                <div className="content">
-                    <a href="/" className="author">
-                        Sam
-                    </a>
-                    <div className="metadata">
-                        <span className="date">Today at 5:42PM</span>
-                    </div>
-                    <div className="text">Nice blog post!</div>
-
-                </div>
-
-            </div>
-            <div className="comment">
-
-                <a href="/" className="avatar">
-                    <img alt="avatar" src={faker.image.avatar()} />
-                </a>
-
-                <div className="content">
-                    <a href="/" className="author">
-                        Sam
-                    </a>
-                    <div className="metadata">
-                        <span className="date">Today at 5:42PM</span>
-                    </div>
-                    <div className="text">Nice blog post!</div>
-
-                </div>
-
-            </div>
+            <CommentDetail author="Sam" />
+            <CommentDetail author="Alex"/>
+            <CommentDetail author="Jane"/>
         </div>
     );
 };
