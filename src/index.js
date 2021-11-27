@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 // var faker = require("faker");
 import faker from "faker";
 import CommentDetail from "./CommentDetail";
+import ApprovalCard from "./ApprovalCard";
 // we don't need to put the .js extension on the file name we are importing
 // because we are importing a module and not a file.
 
@@ -47,24 +48,25 @@ if (module.hot) {
 const App = () => {
     return (
         <div className="ui container comments">
-            <CommentDetail 
-                author="Sam" 
-                date="Today at 6:00PM" 
-                commentary="Shut up!" 
-                avatar={faker.image.avatar()} 
-            />
-            <CommentDetail 
-                author="Alex" 
-                date="Today at 5:42PM" 
-                commentary="Nice one!" 
-                avatar={faker.image.avatar()} 
-            />
-            <CommentDetail 
-                author="Jane" 
-                date="Today at 3:33PM" 
-                commentary="Nice blog post!" 
-                avatar={faker.image.avatar()} 
-            />
+            <ApprovalCard/>
+                <CommentDetail 
+                    author="Sam" 
+                    date="Today at 6:00PM" 
+                    commentary="Shut up!" 
+                    avatar={faker.image.avatar()} 
+                />
+                <CommentDetail 
+                    author="Alex" 
+                    date="Today at 5:42PM" 
+                    commentary="Nice one!" 
+                    avatar={faker.image.avatar()} 
+                />
+                <CommentDetail 
+                    author="Jane" 
+                    date="Today at 3:33PM" 
+                    commentary="Nice blog post!" 
+                    avatar={faker.image.avatar()} 
+                />
         </div>
     );
 };
