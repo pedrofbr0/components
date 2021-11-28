@@ -42,9 +42,7 @@ import ApprovalCard from "./ApprovalCard";
 // To passa a component to another, we still use the props system, but we
 // use the JSX syntax and now encapsulate the component in a JSX tag. This
 // pass the component to the parent component so it can render it.
-
-// We acess the component with {props.children}
-
+// We acess the component with props.children
 
 // Fixing the live reloading  
 if (module.hot) {
@@ -57,13 +55,6 @@ const App = () => {
         <div className="ui container comments">
 
             <ApprovalCard>
-
-                <h4>Warning!</h4>
-                <div>Are you sure you want to do this?</div>
-            </ApprovalCard>
-
-            <ApprovalCard>
-
                 <CommentDetail 
                     author="Sam" 
                     date="Today at 6:00PM" 
@@ -93,6 +84,5 @@ const App = () => {
         </div>
     );
 };
-
 
 ReactDOM.render(<App />, document.getElementById("root"));
