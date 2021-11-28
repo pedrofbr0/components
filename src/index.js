@@ -45,7 +45,6 @@ import ApprovalCard from "./ApprovalCard";
 
 // We acess the component with {props.children}
 
-
 // Fixing the live reloading  
 if (module.hot) {
     module.hot.accept();
